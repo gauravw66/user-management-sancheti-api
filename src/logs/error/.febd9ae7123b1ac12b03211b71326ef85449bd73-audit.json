@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\error\\.febd9ae7123b1ac12b03211b71326ef85449bd73-audit.json",
+    "files": [
+        {
+            "date": 1729774501875,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\error\\2024-10-24.log",
+            "hash": "c4c77b2c7ff8adc8e3dc1dbba8a4c574b2921fb9d922c29abfd48558074c9c48"
+        },
+        {
+            "date": 1729835750850,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\error\\2024-10-25.log",
+            "hash": "217936be4ef8eabd4118fde5c32bd18846bd4beb78a4454fa7f17fee2e421e3d"
+        },
+        {
+            "date": 1730181550862,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\error\\2024-10-29.log",
+            "hash": "f1dbcf93e14902cb78a83e18ada11b636b5deacabd7d30b343348ea354ecd533"
+        }
+    ],
+    "hashType": "sha256"
+}

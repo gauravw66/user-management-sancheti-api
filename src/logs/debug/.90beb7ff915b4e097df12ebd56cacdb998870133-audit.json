@@ -1,0 +1,55 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\.90beb7ff915b4e097df12ebd56cacdb998870133-audit.json",
+    "files": [
+        {
+            "date": 1701067049875,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\2023-11-27.log",
+            "hash": "a1e82d5567c12f019d8790e34415685222f457042a15767494d3f3fef31ec883"
+        },
+        {
+            "date": 1728548427304,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\2024-10-10.log",
+            "hash": "43590656adf3c8e92729f58767495dabc61d0a42834ad7e20f873d78abfd8f8b"
+        },
+        {
+            "date": 1728889932313,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\2024-10-14.log",
+            "hash": "71ec5cde7e3474ee6e937d769ba8768b437d9784355864bc9f0fbfb1ef288ef4"
+        },
+        {
+            "date": 1729073304865,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\2024-10-16.log",
+            "hash": "c35234aa8fc16207776a8601d3e526cbba270ec9df8556e3ab8a4321d7b4b1aa"
+        },
+        {
+            "date": 1729233510334,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\2024-10-18.log",
+            "hash": "862e8ba6e12a8bf931dd49af7e421a7d83f08e611d715e793f85f576a61cc414"
+        },
+        {
+            "date": 1729675389968,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\2024-10-23.log",
+            "hash": "b5f11d9806a06c3269621279ade312f2f50fadb973fd6f554b3345a28ac86386"
+        },
+        {
+            "date": 1729745166700,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\2024-10-24.log",
+            "hash": "f8a1327939ba2b6c69e9f125d334b8e0f852e2d198688717bd50385eda8d68d7"
+        },
+        {
+            "date": 1729835750848,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\2024-10-25.log",
+            "hash": "c333fdeabd320aae1625a832dbcce411cffbe742a57c16ef972430297ce8f384"
+        },
+        {
+            "date": 1730181550839,
+            "name": "C:\\avadhut\\projects\\orthoai-api\\src\\logs\\debug\\2024-10-29.log",
+            "hash": "73feee4be5237b31875d722c3a19cfd134ae45a512bebca781fd2db1e49a2ae2"
+        }
+    ],
+    "hashType": "sha256"
+}

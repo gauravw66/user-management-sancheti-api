@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\reshm\\OneDrive\\Documents\\Desktop\\Sancheti\\user-management-sancheti-api\\src\\logs\\error\\.645c9cc44ef575300cf315b07ae140074b7b52df-audit.json",
+    "files": [
+        {
+            "date": 1731998803998,
+            "name": "C:\\Users\\reshm\\OneDrive\\Documents\\Desktop\\Sancheti\\user-management-sancheti-api\\src\\logs\\error\\2024-11-19.log",
+            "hash": "c1f38f5708b9559a5c3fbaa9a370fdc2bb96439c8beaa516ab1fcde5ebff5ef3"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\reshm\\OneDrive\\Documents\\Desktop\\Orthoai project\\orthoai-api\\src\\logs\\debug\\.b20be6cce7949db08ae9805ff019b85388543caa-audit.json",
+    "files": [
+        {
+            "date": 1731997297045,
+            "name": "C:\\Users\\reshm\\OneDrive\\Documents\\Desktop\\Orthoai project\\orthoai-api\\src\\logs\\debug\\2024-11-19.log",
+            "hash": "4556b3d8410f2f412a9cb8df2f9d141416235acfed251c5824a553860acea0d3"
+        }
+    ],
+    "hashType": "sha256"
+}

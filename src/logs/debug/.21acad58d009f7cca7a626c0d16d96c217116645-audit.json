@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\Nilesh Bhoi\\Documents\\Company\\Projects\\orthoai-api\\src\\logs\\debug\\.21acad58d009f7cca7a626c0d16d96c217116645-audit.json",
+    "files": [
+        {
+            "date": 1702130674353,
+            "name": "C:\\Users\\Nilesh Bhoi\\Documents\\Company\\Projects\\orthoai-api\\src\\logs\\debug\\2023-12-09.log",
+            "hash": "0c875e68f28d9817d47093897ae52d0c0d60d7d2479dca76b9a3ed1cfd78f633"
+        }
+    ],
+    "hashType": "sha256"
+}

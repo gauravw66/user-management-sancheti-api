@@ -1,0 +1,194 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id           String         @id @default(uuid())
+  email        String         @unique
+  firstName    String
+  lastName     String?
+  mobile       String
+  password     String?
+  profilePic   String?
+  isSSOuser    Boolean        @default(false)
+  status       Boolean?       @default(true)
+  createdAt    DateTime?      @default(now())
+  updatedAt    DateTime?      @updatedAt
+  genId        String?
+  googleId     String?
+  userType     user_type?
+  companyId    String?
+  QA           QA[]
+  coupon       coupon[]
+  signupToken  signupToken[]
+  subscription subscription[]
+  tokens       tokens[]
+  company      company?       @relation(fields: [companyId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "companyidfk")
+  workspaces   workspaces[]
+}
+
+model QA {
+  id          String     @id @default(uuid())
+  userId      String
+  question    String
+  answer      String?
+  error       String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @default(now()) @updatedAt
+  workspaceId String
+  vote        Boolean?
+  reason      String?
+  url         String?
+  user        users      @relation(fields: [userId], references: [id])
+  workspaces  workspaces @relation(fields: [workspaceId], references: [id])
+}
+
+model tokens {
+  id        String    @id @default(uuid())
+  token     String
+  user_id   String
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+  user      users     @relation(fields: [user_id], references: [id])
+}
+
+model signupToken {
+  id        String    @id @default(uuid())
+  token     String?
+  status    Boolean?  @default(false)
+  userId    String
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+  user      users     @relation(fields: [userId], references: [id])
+}
+
+model subscription {
+  id                  String                       @id @default(uuid())
+  userId              String
+  subscriptionType    subscriptionType             @default(free)
+  queryCount          Int                          @default(50)
+  amount              Float?
+  amountType          amount_type?
+  transactionNumber   String?                      @unique
+  additionalInfo      String?
+  paymentStatus       payment_status?
+  isPaymentOnline     Boolean?
+  subscriptionEndDate DateTime?
+  isPlanActive        Boolean                      @default(false)
+  approvalStatus      transaction_approval_status? @default(PENDING)
+  createdAt           DateTime                     @default(now())
+  updatedAt           DateTime                     @default(now()) @updatedAt
+  payment             payment[]
+  user                users                        @relation(fields: [userId], references: [id])
+}
+
+model payment {
+  id             String                      @id @default(uuid())
+  status         transaction_approval_status @default(PENDING)
+  subscriptionId String?
+  createdAt      DateTime                    @default(now())
+  updatedAt      DateTime                    @default(now()) @updatedAt
+  subscription   subscription?               @relation(fields: [subscriptionId], references: [id])
+}
+
+model general_settings {
+  id                 String           @id @default(uuid())
+  subscriptionAmount Float
+  name               String
+  subscriptionType   subscriptionType @unique
+  limit              Int
+  offers             String[]
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @default(now()) @updatedAt
+}
+
+model workspaces {
+  id        String   @id @default(uuid())
+  userId    String
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  QA        QA[]
+  user      users    @relation(fields: [userId], references: [id])
+}
+
+model company {
+  id         String    @id @default(dbgenerated("nextval('company_id_seq'::regclass)"))
+  name       String
+  gst        String?
+  address    String?
+  companyUrl String?
+  contact    String?
+  createdAt  DateTime  @default(now()) @db.Timestamptz(6)
+  updatedAt  DateTime? @default(now()) @db.Timestamp(6)
+  coupon     coupon[]
+  users      users[]
+}
+
+model coupon {
+  id        String   @id @default(dbgenerated("nextval('coupon_id_seq'::regclass)"))
+  code      String   @unique(map: "couponUnique")
+  companyId String?
+  userId    String?
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @default(now()) @db.Timestamp(6)
+  company   company? @relation(fields: [companyId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "companyIdfk")
+  users     users?   @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "userIdfk")
+}
+
+model tags {
+  id                           String     @id @default(uuid())
+  name                         String
+  createdAt                    DateTime   @default(now()) @db.Timestamp(6)
+  discover_discover_tagsTotags discover[] @relation("discover_tagsTotags")
+}
+
+model discover {
+  tags                     String?
+  id                       String   @id @default(uuid())
+  title                    String?
+  link                     String?
+  snippet                  String?
+  date                     String?
+  source                   String?
+  imageUrl                 String?
+  position                 Int?     @default(autoincrement())
+  createdAt                DateTime @default(now())
+  tags_discover_tagsTotags tags?    @relation("discover_tagsTotags", fields: [tags], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "tags")
+}
+
+enum transaction_approval_status {
+  PENDING
+  APPROVED
+  NOT_APPROVED
+}
+
+enum payment_status {
+  SUCCESS
+  INITIATED
+  FAIL
+}
+
+enum amount_type {
+  CREDIT
+  DEBIT
+}
+
+enum subscriptionType {
+  free
+  monthlyPro
+  monthlyEnterprise
+  quaterly
+  half_yearly
+  yearly
+}
+
+enum user_type {
+  Doctor
+  Patient
+}
