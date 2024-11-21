@@ -29,7 +29,9 @@ CREATE TABLE "users" (
     "genId" TEXT,
     "googleId" TEXT,
     "userType" "user_type",
-    "companyId" TEXT,
+    "companyId" INTEGER,
+    "city" TEXT,
+    "area" TEXT,
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
@@ -133,7 +135,7 @@ CREATE TABLE "workspaces" (
 
 -- CreateTable
 CREATE TABLE "company" (
-    "id" TEXT NOT NULL DEFAULT nextval('company_id_seq'::regclass),
+    "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "gst" TEXT,
     "address" TEXT,
@@ -147,9 +149,9 @@ CREATE TABLE "company" (
 
 -- CreateTable
 CREATE TABLE "coupon" (
-    "id" TEXT NOT NULL DEFAULT nextval('coupon_id_seq'::regclass),
+    "id" SERIAL NOT NULL,
     "code" TEXT NOT NULL,
-    "companyId" TEXT,
+    "companyId" INTEGER,
     "userId" TEXT,
     "createdAt" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,

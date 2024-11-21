@@ -22,7 +22,9 @@ model users {
   genId        String?
   googleId     String?
   userType     user_type?
-  companyId    String?
+  companyId    Int?
+  city String?
+  area String?
   QA           QA[]
   coupon       coupon[]
   signupToken  signupToken[]
@@ -118,7 +120,7 @@ model workspaces {
 }
 
 model company {
-  id         String    @id @default(dbgenerated("nextval('company_id_seq'::regclass)"))
+  id         Int   @id @default(autoincrement())
   name       String
   gst        String?
   address    String?
@@ -131,9 +133,9 @@ model company {
 }
 
 model coupon {
-  id        String   @id @default(dbgenerated("nextval('coupon_id_seq'::regclass)"))
+  id         Int   @id @default(autoincrement())
   code      String   @unique(map: "couponUnique")
-  companyId String?
+  companyId Int?
   userId    String?
   createdAt DateTime @default(now()) @db.Timestamp(6)
   updatedAt DateTime @default(now()) @db.Timestamp(6)

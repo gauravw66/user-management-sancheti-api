@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "G:\\Internship\\user-management-sancheti-api\\src\\logs\\debug\\.af156e44abaf1e8f1b741b0045b4dbfb40ac604f-audit.json",
+    "files": [
+        {
+            "date": 1732169503444,
+            "name": "G:\\Internship\\user-management-sancheti-api\\src\\logs\\debug\\2024-11-21.log",
+            "hash": "d8fc84c6ddfce89921445da4c5f3bdc80e1d0f1b3420d3e142a253ed9f3ef5b4"
+        }
+    ],
+    "hashType": "sha256"
+}

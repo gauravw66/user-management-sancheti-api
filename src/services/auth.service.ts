@@ -365,11 +365,11 @@ class AuthService {
       throw new HttpException(400, "Email verification is pending! Please check your email to reset password");
     }
 
-    let decrypt_password = await compare(password, user.password)
+    // let decrypt_password = await compare(password, user.password)
 
-    console.log(decrypt_password)
+    // console.log(decrypt_password)
 
-    if (!decrypt_password) {
+    if (password!==user.password) {
       throw new HttpException(400, "Invalid password");
     }
 
@@ -422,6 +422,8 @@ class AuthService {
         firstName: user.firstName,
         lastName: user.lastName,
         mobile: user.mobile,
+        city:user.city,
+        area:user.area,
         status: user.status,
         userType: user.userType,
         subscriptionType: user.subscription[0]?.subscriptionType,
