@@ -12,7 +12,7 @@ model users {
   email        String         @unique
   firstName    String
   lastName     String?
-  mobile       String
+  mobile       String?        
   password     String?
   profilePic   String?
   isSSOuser    Boolean        @default(false)

@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "D:\\userManagement-Sancheti\\New folder\\user-management-sancheti-api\\src\\logs\\debug\\.c9559de8a1f362ee337a9ad120fa4534cac4c6a5-audit.json",
+    "files": [
+        {
+            "date": 1732193048165,
+            "name": "D:\\userManagement-Sancheti\\New folder\\user-management-sancheti-api\\src\\logs\\debug\\2024-11-21.log",
+            "hash": "9624f3265ac60d160ceb5a86679fecc6bcb0389174ba377fa7e2ecaacccfd06a"
+        },
+        {
+            "date": 1732500981832,
+            "name": "D:\\userManagement-Sancheti\\New folder\\user-management-sancheti-api\\src\\logs\\debug\\2024-11-25.log",
+            "hash": "46166e36f16df0dbb1d3da9991856298152e62633e27823780a1c4bb360eaae8"
+        }
+    ],
+    "hashType": "sha256"
+}
